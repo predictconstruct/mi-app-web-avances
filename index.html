@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Avances de Obra</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
+    form { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; width: 300px; margin: auto; }
+    input, textarea, button { width: 100%; margin-top: 10px; padding: 10px; }
+    h1 { text-align: center; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Registro de Avance</h1>
+  <form id="avanceForm">
+    <input type="text" placeholder="ID de actividad" id="idActividad" required />
+    <input type="number" placeholder="Metros ejecutados" id="metroReal" required />
+    <input type="date" id="fechaAvance" required />
+    <textarea placeholder="Observaciones" id="observaciones"></textarea>
+    <button type="submit">Guardar avance</button>
+  </form>
+
+  <script>
+    document.getElementById('avanceForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const avance = {
+        id: document.getElementById('idActividad').value,
+        metros: document.getElementById('metroReal').value,
+        fecha: document.getElementById('fechaAvance').value,
+        obs: document.getElementById('observaciones').value
+      };
+      alert("¡Avance guardado! (solo simulado por ahora)");
+      console.log(avance);
+    });
+  </script>
+</body>
+</html>
